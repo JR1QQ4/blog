@@ -1,2 +1,1 @@
-# JR1QQ4.github.io
-blog
+# 基于 Hexo 的个人博客
