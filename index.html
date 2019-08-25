@@ -11,20 +11,29 @@
     <base target="_blank">
     <title>Blog Template for rauchg</title>
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="/css/main.css">
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="/css/blog.css">
+    <link rel="stylesheet" href="/blog/./css/main.min.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
         <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <link rel="stylesheet" href="/blog/./highlight/styles/default.css">
+    <script src="/blog/./highlight/highlight.pack.js"></script>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('figure').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
 </head>
 
 <body>
     <main class="main">
         <div class="logo">
-            <a href='https://jr1qq4.github.io'>jr1qq4.github.io</a>
+            <a href='https://jr1qq4.github.io/blog/'>jr1qq4.github.io</a>
             (<a href="https://github.com/JR1QQ4">src</a>)
         </div>
 
@@ -34,18 +43,20 @@
         <h1>Chen TianHao</h1>
         <nav class="links">
             <a href="https://github.com/JR1QQ4">GitHub</a>
-            <a href="./blog/">Blog</a>
+            <a href="/blog/archives/">Blog</a>
             <a href="mailto:chenjunrenyx@163.com">Email</a>
         </nav>
         <nav>
-            Powered by <a href="https://hexo.io/">Hexo</a> & Theme by <a href="https://rauchg.com">rauchg</a> 
+            Powered by <a href="https://hexo.io/">Hexo</a> & Theme by <a href="https://rauchg.com">rauchg</a>
         </nav>
     </div>
 </div>
-            
         
 
-        <!-- <!--  -->
+
+        
+
+        
     </main>
 </body>
 

@@ -1,0 +1,91 @@
+<html lang="zh-CN">
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content>
+    <meta name="author" content>
+    <link rel="icon" href="favicon/favicon.ico">
+    <base target="_blank">
+    <title>Blog Template for rauchg</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/blog/./css/main.min.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="/blog/./highlight/styles/default.css">
+    <script src="/blog/./highlight/highlight.pack.js"></script>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('figure').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <main class="main">
+        <div class="logo">
+            <a href='https://jr1qq4.github.io/blog/'>jr1qq4.github.io</a>
+            (<a href="https://github.com/JR1QQ4">src</a>)
+        </div>
+
+        
+
+
+        
+
+        
+            
+<article class="article">
+    <h1 class="header"><a href="#">如何使用Hexo+GiuHubPage自定义自己的博客</a></h1>
+    <div class="time">
+        August 25, 2019 - 
+        <span id="busuanzi_container_page_pv">
+            <span id="busuanzi_value_page_pv"></span> views
+        </span>
+    </div>
+    <blockquote>
+<p>经过这些天的再次摸索，终于有了自己的博客，原本是想直接采用别人的主题，但是还是想自己创建一个。然后我就去寻找关于“如何自定义创建主题”的文章，索性寻找到了一些线索，最后我决定还是仿照自己喜欢的页面。</p>
+</blockquote>
+<h2 id="让我们开始吧"><a href="#让我们开始吧" class="headerlink" title="让我们开始吧"></a>让我们开始吧</h2><p>首先是基本的几连，相信你看<a href="https://hexo.io/" target="_blank" rel="noopener">官方文档</a>就能明白的。没错就像是这样，前提是在命令行中输入哦：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<p>正如官方文档所言，这只能在本地查看，并不能放到 github page 上，通过网址浏览。此时需要把写的文章，转换成静态的网页，并转发到相应的仓库中。大致三步，修改配置文件，生成静态文件，上传。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 修改配置文件，需要留意仓库的地址哦</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/JR1QQ4/blog.git</span><br><span class="line">  branch: master</span><br><span class="line"># 生成静态文件，如果之前生成过就清除一下</span><br><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line"># 上传文件，上传的时候可以不使用 git 的命令，直接使用插件，插件需要安装</span><br><span class="line">$ npm install hexo-deployer-git --save</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+
+<p>此时就能在 git 上查看到上传的文件了，当然此时的页面主题是官方的主题，接下来我们就来创建属于自己的主题。</p>
+<h2 id="获取自己的主题"><a href="#获取自己的主题" class="headerlink" title="获取自己的主题"></a>获取自己的主题</h2><p>正如官方文档所说，你可以采用他人的主题，一般别人的主题都会有 readme 介绍的。步骤大致两步，首先下载主题代码，然后配置相关的项，有的主题配置的时候需要安装额外插件，总之有 readme 介绍的就放心使用。</p>
+<p>创建自己的主题的话就需要有 html + css + js + ejs 的知识，相信对你来说 html + css + js 是手到擒来的，ejs 的话是一个模板语言，大概就是可以在 html 中插入 js，说起来好像和 js 一样。没错，其实差不多，但是还是需要先知道它的语法糖，搜官方文档就完事了。</p>
+<p>相信你看过官方文档之后，心里就有眉目了，想跃跃欲试了，在这之前，不如先看看几篇文章。</p>
+<ul>
+<li><a href="https://www.cnblogs.com/DCL1314/p/7732696.html" target="_blank" rel="noopener">ejs模板引擎</a></li>
+<li><a href="http://www.codeblocq.com/2016/03/Create-an-Hexo-Theme-Part-1-Index/" target="_blank" rel="noopener">Create an Hexo Theme - Part 1: Index</a></li>
+<li><a href="http://www.codeblocq.com/2016/03/Create-an-Hexo-Theme-Part-2-Other-Pages/" target="_blank" rel="noopener">Create an Hexo Theme - Part 2: Other Pages 09 March 2016</a></li>
+<li><a href="http://www.codeblocq.com/2016/03/Create-an-Hexo-Theme-Part-3-Comments-Analytics-and-Widgets/" target="_blank" rel="noopener">Create an Hexo Theme - Part 3: Comments, Analytics and Widgets</a></li>
+<li><a href="https://www.cnblogs.com/yyhh/p/11058985.html" target="_blank" rel="noopener">Hexo主题开发</a></li>
+</ul>
+<p>看过这级片文章，聪明的你应该已经会动收制作了。此时你可以想自己想要一个什么样的主题，那我来说，我的话就想存放一个自己笔记文字的地方，所以我选择了一个比较喜欢的博客，<a href="https://rauchg.com" target="_blank" rel="noopener">rauchg.com</a>。如果你还没拿定主意，那么可以去搜寻属于你的主题，这里推荐两个地方，一个是 <a href="https://en.abnerchou.me/Blog/5c00ca67/" target="_blank" rel="noopener">Hexo Top 10 Popular Themes</a>，另一个是 <a href="https://www.zhihu.com/question/24422335/answer/46357100" target="_blank" rel="noopener">有哪些好看的 Hexo 主题？</a>。</p>
+<p>选择好了主题那就开始制作吧。</p>
+<h2 id="填坑记录"><a href="#填坑记录" class="headerlink" title="填坑记录"></a>填坑记录</h2><ol>
+<li><p>不知道怎么创建布局。上面的文章有说到的，大致就是把重用的模块独立开来，然后在 layout/layout.ejs 中像摆盒子那样，把布局拼接出来。</p>
+</li>
+<li><p>不知道怎么获取配置和文章的信息内容。你可以在网页中输出两个变量，就能查看到你想要的信息了，然后遍历就能得到了：</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;% site %&gt;</span><br><span class="line">&lt;% page %&gt;</span><br></pre></td></tr></table></figure>
+
+
+</article>
+        
+    </main>
+</body>
+
+</html>
