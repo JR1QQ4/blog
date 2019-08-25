@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font: 13px Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+}
+
+.main {
+  padding: 25px 50px;
+}
+
+@media (max-width: 500px) {
+  .main {
+    padding: 25px 15px;
+  }
+}
+
+.logo {
+  position: relative;
+  z-index: 9999;
+  padding-bottom: 50px;
+}
+
+.home {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.home .center {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  text-align: center;
+}
+
+.home .center h1 {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.home .center .links {
+  margin-top: 20px;
+}
+
+.home .center .links a {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.home .center nav {
+  margin-top: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #22BAD9;
+  cursor: pointer;
+}
+
+a:hover {
+  background-color: #22BAD9;
+  color: #fff;
+}
+
+a.header {
+  color: #FF001F;
+}
+
+a.header:hover {
+  background-color: #FF001F;
+  color: #fff;
+}

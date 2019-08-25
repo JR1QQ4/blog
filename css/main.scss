@@ -1,0 +1,91 @@
+$block-color: #999;
+$green-color: #22BAD9;
+$red-color  : #FF001F;
+
+* {
+    margin    : 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 13px Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+}
+
+.main {
+    padding: 25px 50px;
+}
+
+@media (max-width: 500px) {
+    .main {
+        padding: 25px 15px;
+    }
+}
+
+.logo {
+    position: relative;
+    z-index: 9999;
+    padding-bottom: 50px;
+}
+
+.home {
+    position               : absolute;
+    top                    : 0;
+    left                   : 0;
+    bottom                 : 0;
+    right                  : 0;
+    display                : -webkit-box;
+    display                : -webkit-flex;
+    display                : -ms-flexbox;
+    display                : flex;
+    -webkit-align-items    : center;
+    -webkit-box-align      : center;
+    -ms-flex-align         : center;
+    align-items            : center;
+    -webkit-box-pack       : center;
+    -webkit-justify-content: center;
+    -ms-flex-pack          : center;
+    justify-content        : center;
+    z-index: 1;
+
+    .center {
+        flex      : none;
+        text-align: center;
+
+        h1 {
+            font-size  : 16px;
+            font-weight: normal;
+        }
+
+        .links {
+            margin-top: 20px;
+
+            a {
+                display: inline-block;
+                margin : 0 15px;
+            }
+        }
+        nav {
+            margin-top: 20px;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+    color          : $green-color;
+    cursor         : pointer;
+}
+
+a:hover {
+    background-color: $green-color;
+    color           : #fff;
+}
+
+a.header {
+    color: $red-color;
+}
+
+a.header:hover {
+    background-color: $red-color;
+    color           : #fff;
+}
